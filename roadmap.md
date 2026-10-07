@@ -5,4 +5,4 @@
 - [x] Scholarship estimator and diagnostic mock test
 - [x] Interactive campus explorer and facilities
 - [x] Transport finder, parent portal, reviews, enquiry, and FAQ assistant
-- [ ] Validate build and live desktop/mobile interactions
+- [x] Validate build and live desktop/mobile interactions
