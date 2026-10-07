@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Project architecture
+
+- Keep the public academy demo as a frontend-only experience composed from `src/components/academy-site.tsx` and immutable data in that module, because it must remain immediately shareable without authentication or persistent data.
