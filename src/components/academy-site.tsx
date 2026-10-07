@@ -83,6 +83,14 @@ const routes = [
   { place: "Daund", distance: "28 km", time: "06:15 AM", route: "Route D3" },
 ];
 
+export const faqs = [
+  { q: "Which courses does Kalaskar Toppers Academy offer?", a: "JEE, NEET and MHT-CET preparation for Classes XI-XII and repeaters, plus Foundation programmes for Classes VIII-X." },
+  { q: "Is hostel accommodation available?", a: "Yes. The academy offers residential hostel facilities with mess, supervised study hours and mentor support." },
+  { q: "Does the academy provide transport?", a: "Yes. Academy buses run morning and evening routes covering Kashti, Shrigonda, Belwandi, Daund and nearby villages." },
+  { q: "Are scholarships available?", a: "Merit-based fee concessions are available based on Class 10 board marks or entrance test scores. Counselling confirms final eligibility." },
+  { q: "Where is the academy located?", a: "Shrigonda Road Chowk, next to Sagar Traders, Kashti, Shrigonda Tehsil, Ahilyanagar, Maharashtra 414701." },
+];
+
 const quickAnswers = [
   { question: "When do admissions close?", answer: "Admissions for 2026-27 are currently open. The team can confirm seat availability for your course." },
   { question: "Is hostel available?", answer: "Yes, the academy offers residential hostel and mess facilities. Availability is confirmed during counselling." },
@@ -386,7 +394,33 @@ export function AcademySite() {
         <div className="mx-auto max-w-7xl px-5 lg:px-8"><div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]"><div><SectionHeading eyebrow="Voices of confidence" title="Trusted by students. Recommended by families." /><div className="mt-7 flex items-center gap-4"><strong className="font-display text-6xl">4.9</strong><div><div className="flex text-brand-gold">{[1,2,3,4,5].map((item)=><Star key={item} className="size-5 fill-current" />)}</div><p className="mt-1 text-sm text-muted-foreground">Based on 413 Google reviews</p></div></div></div><div className="grid gap-4 sm:grid-cols-2">{[{name:'Mohini Mhaske',quote:'In two years I experienced that I increased my knowledge only because of Toppers Academy and their brilliant team. All teachers are well educated.'},{name:'Vini Datir',quote:'The academy is very good. Teaching faculty is very helpful and teaching is excellent. Overall experience is very good.'}].map((review)=><blockquote key={review.name} className="rounded-md border border-border bg-card p-7"><Quote className="size-8 text-brand-gold" /><p className="mt-6 text-base leading-7 text-foreground">"{review.quote}"</p><footer className="mt-6 flex items-center justify-between border-t border-border pt-5"><strong className="text-sm">{review.name}</strong><div className="flex text-brand-gold">{[1,2,3,4,5].map((item)=><Star key={item} className="size-3.5 fill-current" />)}</div></footer></blockquote>)}</div></div></div>
       </section>
 
-      <section id="enquire" className="relative overflow-hidden bg-brand-soft py-24 sm:py-32">
+      <section id="founder" className="border-t border-border py-24 sm:py-32">
+        <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-8">
+          <img loading="lazy" decoding="async" width={800} height={1000} src={facultyAsset.url} alt="Prof. Ganesh Kalaskar with students in the academy guidance room" className="aspect-[4/5] w-full object-cover grayscale" />
+          <div>
+            <SectionHeading eyebrow="About the founder" title="Prof. Ganesh Kalaskar" copy="Founder and Director, Kalaskar Toppers Academy, Kashti." />
+            <p className="mt-6 max-w-2xl leading-8 text-muted-foreground">Prof. Kalaskar founded the academy to give students from Kashti, Shrigonda and the wider Ahilyanagar district access to serious JEE, NEET and MHT-CET preparation without leaving the region. He leads the academic team, designs the test programme and personally reviews student progress with families.</p>
+            <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">Today the academy supports a community of 600 to 800+ students across classroom, hostel and transport programmes.</p>
+            <p className="mt-6 text-xs uppercase tracking-[0.16em] text-muted-foreground">Bio draft for client review</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="bg-brand-soft py-24 sm:py-32">
+        <div className="mx-auto max-w-4xl px-5 lg:px-8">
+          <SectionHeading eyebrow="Questions from parents" title="Frequently asked questions" />
+          <div className="mt-10 divide-y divide-border border-y border-border">
+            {faqs.map((item) => (
+              <details key={item.q} className="group py-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-display text-xl">{item.q}<ChevronDown className="size-5 shrink-0 text-primary transition group-open:rotate-180" /></summary>
+                <p className="mt-4 leading-7 text-muted-foreground">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="enquire" className="relative overflow-hidden py-24 sm:py-32">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:px-8">
           <div><SectionHeading eyebrow="Admissions 2026-27" title="Your next result starts with one conversation." copy="Meet the academic team, understand the right pathway and experience the academy before making a decision." /><div className="mt-8 grid gap-4 sm:grid-cols-2"><a href={`tel:+91${PHONE}`} className="flex items-center gap-4 rounded-md border border-border bg-card p-5 transition hover:border-primary/40"><span className="grid size-11 place-items-center rounded-full bg-primary text-primary-foreground"><Phone className="size-4" /></span><span><small className="block text-muted-foreground">Call admissions</small><strong>+91 {PHONE}</strong></span></a><a href={WHATSAPP} target="_blank" rel="noreferrer" className="flex items-center gap-4 rounded-md border border-border bg-card p-5 transition hover:border-primary/40"><span className="grid size-11 place-items-center rounded-full bg-success text-success-foreground"><MessageCircle className="size-4" /></span><span><small className="block text-muted-foreground">Chat on WhatsApp</small><strong>Quick response</strong></span></a></div><p className="mt-7 flex items-start gap-3 text-sm leading-6 text-muted-foreground"><MapPin className="mt-1 size-4 shrink-0 text-primary" /> Shrigonda Road Chowk, next to Sagar Traders, Kashti, Maharashtra 414701</p></div>
           <form className="rounded-md border border-border bg-card p-6 shadow-premium sm:p-8" onSubmit={(e)=>e.preventDefault()}><p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Request a counselling call</p><h3 className="mt-3 font-display text-2xl font-semibold">Tell us where you are in the journey.</h3><div className="mt-7 grid gap-4 sm:grid-cols-2"><Input aria-label="Student name" placeholder="Student name" className="h-12" /><Input aria-label="Phone number" placeholder="Phone number" className="h-12" /><Select defaultValue="JEE"><SelectTrigger className="h-12"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="JEE">JEE preparation</SelectItem><SelectItem value="NEET">NEET preparation</SelectItem><SelectItem value="Foundation">Foundation</SelectItem></SelectContent></Select><Select defaultValue="Class 11"><SelectTrigger className="h-12"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="Class 10">Class 10</SelectItem><SelectItem value="Class 11">Class 11</SelectItem><SelectItem value="Class 12">Class 12</SelectItem><SelectItem value="Repeater">Repeater</SelectItem></SelectContent></Select></div><Button type="button" className="mt-5 h-12 w-full" asChild><a href={WHATSAPP} target="_blank" rel="noreferrer">Continue on WhatsApp <ArrowRight /></a></Button><p className="mt-4 text-center text-xs text-muted-foreground">Demo enquiry flow · No details are stored</p></form>
