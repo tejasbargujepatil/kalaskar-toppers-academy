@@ -9,6 +9,11 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
+# Development guidelines
+
+- Preserve published Git history and keep the connected branch working, because history rewrites can break project synchronization.
+
 ## Project architecture
 
 - Keep the public academy demo as a frontend-only experience composed from `src/components/academy-site.tsx` and immutable data in that module, because it must remain immediately shareable without authentication or persistent data.
+- Retain required build configuration and error-reporting infrastructure when removing branding, because those integrations support preview compilation and diagnostics.
