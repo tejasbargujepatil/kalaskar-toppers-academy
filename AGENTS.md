@@ -17,3 +17,4 @@
 
 - Keep the public academy demo as a frontend-only experience composed from `src/components/academy-site.tsx` and immutable data in that module, because it must remain immediately shareable without authentication or persistent data.
 - Retain required build configuration and error-reporting infrastructure when removing branding, because those integrations support preview compilation and diagnostics.
+- Serve site images from public/images as real files, because Lovable asset CDN URLs do not resolve on external hosts like Vercel.
