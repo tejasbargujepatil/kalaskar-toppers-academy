@@ -245,21 +245,21 @@ export function AcademySite() {
               </article>
             ))}
           </div>
-          <div className="mt-10 overflow-hidden rounded-md bg-brand-soft p-4 sm:p-6">
+          <div className="mt-14 overflow-hidden border border-foreground/10 bg-brand-soft p-4 sm:p-7">
             <div className="grid items-center gap-6 lg:grid-cols-[0.75fr_1.25fr]">
-              <img src={resultAsset.url} alt="JEE Main 2026 results poster showing Kalaskar Toppers Academy achievers" className="mx-auto max-h-[430px] w-full max-w-md rounded-sm object-contain shadow-premium" />
-              <div className="px-2 sm:px-7"><p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">JEE Main 2026</p><h3 className="mt-4 font-display text-3xl font-semibold sm:text-4xl">Three academy toppers above 99 percentile.</h3><p className="mt-4 max-w-xl leading-7 text-muted-foreground">A culture of consistent tests, doubt-solving and individual performance reviews helps students turn preparation into measurable outcomes.</p><Button className="mt-7" asChild><a href="#enquire">Plan your preparation <ArrowRight /></a></Button></div>
+              <img src={resultAsset.url} alt="JEE Main 2026 results poster showing Kalaskar Toppers Academy achievers" className="mx-auto max-h-[430px] w-full max-w-md object-contain shadow-premium" />
+              <div className="px-2 sm:px-9"><p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-gold">JEE Main 2026</p><h3 className="mt-5 font-display text-3xl font-normal sm:text-4xl">Three academy toppers above 99 percentile.</h3><p className="mt-5 max-w-xl leading-7 text-muted-foreground">A culture of consistent tests, doubt-solving and individual performance reviews helps students turn preparation into measurable outcomes.</p><Button className="mt-8 rounded-none bg-primary px-7 text-xs uppercase tracking-[0.12em]" asChild><a href="#enquire">Plan your preparation <ArrowRight /></a></Button></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="courses" className="bg-brand-soft py-24 sm:py-32">
+      <section id="courses" className="border-y border-foreground/10 bg-brand-soft py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <SectionHeading eyebrow="Academic pathways" title="One goal. A sharper plan to reach it." copy="Choose a focused preparation pathway backed by concept clarity, daily discipline and frequent performance checks." />
-          <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-3">
+          <div className="mt-14 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-3">
             {[{icon:Microscope,title:'NEET',sub:'Medical entrance',copy:'Concept mastery, NCERT depth and high-frequency testing across Physics, Chemistry and Biology.',tag:'XI–XII + Repeaters'}, {icon:Zap,title:'JEE + MHT-CET',sub:'Engineering entrance',copy:'Problem-solving depth, speed training and targeted preparation for national and state engineering entrances.',tag:'XI–XII + Repeaters'}, {icon:BookOpen,title:'Foundation',sub:'Build early advantage',copy:'Strong fundamentals, reasoning and exam temperament for students preparing ahead from school years.',tag:'VIII–X'}].map((course) => (
-              <article key={course.title} className="bg-card p-8 sm:p-10"><course.icon className="size-9 text-primary" /><p className="mt-8 text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">{course.sub}</p><h3 className="mt-2 font-display text-3xl font-semibold">{course.title}</h3><p className="mt-4 min-h-24 leading-7 text-muted-foreground">{course.copy}</p><div className="mt-8 flex items-center justify-between border-t border-border pt-5"><span className="text-sm font-bold text-primary">{course.tag}</span><ArrowRight className="size-5 text-primary" /></div></article>
+              <article key={course.title} className="bg-card p-8 transition-colors hover:bg-background sm:p-10"><course.icon className="size-9 text-brand-gold" /><p className="mt-10 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-muted-foreground">{course.sub}</p><h3 className="mt-3 font-display text-3xl font-normal">{course.title}</h3><p className="mt-5 min-h-24 leading-7 text-muted-foreground">{course.copy}</p><div className="mt-8 flex items-center justify-between border-t border-border pt-5"><span className="text-xs font-bold uppercase tracking-[0.12em] text-primary">{course.tag}</span><ArrowRight className="size-5 text-brand-gold" /></div></article>
             ))}
           </div>
         </div>
