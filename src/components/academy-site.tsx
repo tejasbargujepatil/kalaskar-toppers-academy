@@ -334,7 +334,40 @@ export function AcademySite() {
               <div className="relative mt-7"><MapPin className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-primary" /><Input value={routeQuery} onChange={(e)=>setRouteQuery(e.target.value)} placeholder="Try Kashti, Shrigonda, Belwandi..." className="h-12 pl-12" /></div>
               <div className="mt-5 space-y-2">{filteredRoutes.length ? filteredRoutes.map((route)=><div key={route.place} className="flex items-center justify-between rounded-md bg-brand-soft p-4"><div><strong className="block text-sm">{route.place}</strong><span className="text-xs text-muted-foreground">{route.distance} · {route.route}</span></div><span className="rounded-sm bg-primary px-3 py-1.5 text-xs font-bold text-primary-foreground">{route.time}</span></div>) : <p className="rounded-md bg-brand-soft p-5 text-sm text-muted-foreground">No demo route found. Ask the admissions team to confirm pickup availability.</p>}</div>
             </div>
-            <div className="relative min-h-[430px] overflow-hidden bg-brand-deep p-7 text-primary-foreground sm:p-10"><div className="absolute inset-0 opacity-20 map-grid" /><div className="relative"><Bus className="size-10 text-brand-gold" /><h3 className="mt-6 font-display text-3xl font-semibold">From village to classroom, with less uncertainty.</h3><p className="mt-4 max-w-md leading-7 text-primary-foreground/65">The final website can map every operational stop, route and timing for parents in one clear view.</p><div className="relative mt-12 h-44"><span className="absolute left-[8%] top-[50%] size-4 rounded-full border-4 border-brand-gold bg-brand-deep" /><span className="absolute right-[12%] top-[8%] size-5 rounded-full border-4 border-brand-gold bg-brand-deep" /><span className="absolute left-[10%] right-[14%] top-[48%] h-1 origin-left -rotate-[18deg] bg-brand-gold/70" /><span className="absolute left-[42%] top-[28%] grid size-12 place-items-center rounded-full bg-brand-gold text-brand-deep shadow-gold"><Bus className="size-5" /></span><span className="absolute bottom-2 right-0 text-xs font-bold uppercase tracking-[0.16em] text-brand-gold">Academy campus</span></div></div></div>
+            <div className="relative overflow-hidden bg-brand-deep text-primary-foreground">
+              <div className="flex items-center justify-between border-b border-primary-foreground/10 px-7 py-5 sm:px-10">
+                <div className="flex items-center gap-3"><span className="grid size-9 place-items-center border border-brand-gold/40 text-brand-gold"><Bus className="size-4" /></span><div><p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-brand-gold">Transport network</p><p className="font-display text-lg">Morning departures</p></div></div>
+                <span className="flex items-center gap-2 text-[0.65rem] font-bold uppercase tracking-[0.18em] text-primary-foreground/50"><span className="size-1.5 rounded-full bg-success" /> Daily service</span>
+              </div>
+              <div className="relative px-7 py-8 sm:px-10">
+                <svg viewBox="0 0 400 210" className="h-auto w-full" role="img" aria-label="Schematic route map with four bus routes converging on the Kashti campus">
+                  <defs><pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" className="fill-primary-foreground/10" /></pattern></defs>
+                  <rect width="400" height="210" fill="url(#dots)" />
+                  {[
+                    { d: "M30 30 C120 30 180 100 300 105", x: 30, y: 30, label: "Daund · D3" },
+                    { d: "M30 180 C120 180 180 110 300 105", x: 30, y: 180, label: "Shrigonda · S2" },
+                    { d: "M120 15 C160 60 220 100 300 105", x: 120, y: 15, label: "Belwandi · B1" },
+                    { d: "M200 195 C240 150 260 110 300 105", x: 200, y: 195, label: "Kashti stand · K1" },
+                  ].map((r) => (
+                    <g key={r.label}>
+                      <path d={r.d} fill="none" className="stroke-brand-gold/60" strokeWidth="1.5" strokeDasharray="4 4" />
+                      <circle cx={r.x} cy={r.y} r="4" className="fill-brand-deep stroke-brand-gold" strokeWidth="2" />
+                      <text x={r.x + 9} y={r.y + 4} className="fill-primary-foreground/70" fontSize="10" fontFamily="IBM Plex Sans">{r.label}</text>
+                    </g>
+                  ))}
+                  <circle cx="300" cy="105" r="18" className="fill-brand-gold/15" />
+                  <rect x="292" y="97" width="16" height="16" className="fill-brand-gold" />
+                  <text x="324" y="102" className="fill-primary-foreground" fontSize="11" fontWeight="700" fontFamily="IBM Plex Sans">Campus</text>
+                  <text x="324" y="116" className="fill-primary-foreground/50" fontSize="9" fontFamily="IBM Plex Sans">Kashti</text>
+                </svg>
+              </div>
+              <div className="grid grid-cols-3 border-t border-primary-foreground/10">
+                {[["4", "Active routes"], ["06:15", "Earliest pickup"], ["30 km", "Service radius"]].map(([v, l]) => (
+                  <div key={l} className="border-r border-primary-foreground/10 px-5 py-5 last:border-r-0 sm:px-8"><strong className="block font-display text-2xl text-brand-gold">{v}</strong><span className="mt-1 block text-[0.65rem] font-bold uppercase tracking-[0.16em] text-primary-foreground/45">{l}</span></div>
+                ))}
+              </div>
+              <p className="border-t border-primary-foreground/10 px-7 py-4 text-xs text-primary-foreground/45 sm:px-10">Indicative demo routes. Final timings are confirmed by the transport office.</p>
+            </div>
           </div>
         </div>
       </section>
