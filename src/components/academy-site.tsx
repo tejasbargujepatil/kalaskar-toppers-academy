@@ -41,15 +41,15 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import buildingAsset from "@/assets/academy-building.png.asset.json";
-import resultAsset from "@/assets/jee-result-2026.png.asset.json";
-import facultyAsset from "@/assets/faculty-room.png.asset.json";
-import classroomAsset from "@/assets/smart-classroom.png.asset.json";
-import facilitiesAsset from "@/assets/academy-facilities.png.asset.json";
-import examAsset from "@/assets/exam-hall.png.asset.json";
-import campusAsset from "@/assets/academy-campus.png.asset.json";
-import hostelAsset from "@/assets/hostel-building.png.asset.json";
-import communityAsset from "@/assets/student-community.png.asset.json";
+import buildingAsset from "@/assets/academy-building.webp.asset.json";
+import resultAsset from "@/assets/jee-result-2026.webp.asset.json";
+import facultyAsset from "@/assets/faculty-room.webp.asset.json";
+import classroomAsset from "@/assets/smart-classroom.webp.asset.json";
+import facilitiesAsset from "@/assets/academy-facilities.webp.asset.json";
+import examAsset from "@/assets/exam-hall.webp.asset.json";
+import campusAsset from "@/assets/academy-campus.webp.asset.json";
+import hostelAsset from "@/assets/hostel-building.webp.asset.json";
+import communityAsset from "@/assets/student-community.webp.asset.json";
 
 const PHONE = "9657575252";
 const WHATSAPP = `https://wa.me/91${PHONE}?text=${encodeURIComponent("Namaskar, I would like to know more about admissions at Kalaskar Toppers Academy.")}`;
@@ -195,7 +195,7 @@ export function AcademySite() {
       </header>
 
       <section className="relative min-h-[760px] overflow-hidden bg-brand-deep lg:min-h-[820px]">
-        <img src={communityAsset.url} alt="Kalaskar Toppers Academy students outside the Kashti campus" className="absolute inset-0 h-full w-full object-cover object-[60%_center] grayscale opacity-42" />
+        <img src={communityAsset.url} fetchPriority="high" width={1600} height={900} alt="Kalaskar Toppers Academy students outside the Kashti campus" className="absolute inset-0 h-full w-full object-cover object-[60%_center] grayscale opacity-42" />
         <div className="absolute inset-0 bg-hero-wash" />
         <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-brand-deep to-transparent" />
         <div className="relative mx-auto flex min-h-[760px] max-w-7xl items-center px-5 pb-20 pt-16 lg:min-h-[820px] lg:px-8">
@@ -247,7 +247,7 @@ export function AcademySite() {
           </div>
           <div className="mt-14 overflow-hidden border border-foreground/10 bg-brand-soft p-4 sm:p-7">
             <div className="grid items-center gap-6 lg:grid-cols-[0.75fr_1.25fr]">
-              <img src={resultAsset.url} alt="JEE Main 2026 results poster showing Kalaskar Toppers Academy achievers" className="mx-auto max-h-[430px] w-full max-w-md object-contain shadow-premium" />
+              <img loading="lazy" decoding="async" src={resultAsset.url} alt="JEE Main 2026 results poster showing Kalaskar Toppers Academy achievers" className="mx-auto max-h-[430px] w-full max-w-md object-contain shadow-premium" />
               <div className="px-2 sm:px-9"><p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-gold">JEE Main 2026</p><h3 className="mt-5 font-display text-3xl font-normal sm:text-4xl">Three academy toppers above 99 percentile.</h3><p className="mt-5 max-w-xl leading-7 text-muted-foreground">A culture of consistent tests, doubt-solving and individual performance reviews helps students turn preparation into measurable outcomes.</p><Button className="mt-8 rounded-none bg-primary px-7 text-xs uppercase tracking-[0.12em]" asChild><a href="#enquire">Plan your preparation <ArrowRight /></a></Button></div>
             </div>
           </div>
@@ -289,13 +289,13 @@ export function AcademySite() {
           </div>
           <div className="mt-12 grid gap-5 lg:grid-cols-[1fr_310px]">
             <div className="campus-stage group relative min-h-[500px] overflow-hidden rounded-md bg-muted sm:min-h-[620px]">
-              <img key={currentTour.image} src={currentTour.image} alt={currentTour.name} className="absolute inset-0 h-full w-full animate-soft-zoom object-cover" />
+              <img loading="lazy" decoding="async" key={currentTour.image} src={currentTour.image} alt={currentTour.name} className="absolute inset-0 h-full w-full animate-soft-zoom object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-deep via-transparent to-brand-deep/10" />
               <div className="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-brand-deep/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] backdrop-blur"><span className="size-2 animate-pulse rounded-full bg-brand-gold" /> Interactive tour · {tourIndex + 1}/{tourStops.length}</div>
               <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10"><p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-gold">{currentTour.label}</p><h3 className="mt-2 font-display text-4xl font-semibold sm:text-5xl">{currentTour.name}</h3><p className="mt-3 max-w-xl text-sm leading-6 text-primary-foreground/72 sm:text-base">{currentTour.detail}</p></div>
             </div>
             <div className="grid grid-cols-2 gap-3 lg:grid-cols-1">
-              {tourStops.map((stop, index) => <Button key={stop.name} variant="ghost" onClick={() => setTourIndex(index)} className={`h-auto justify-start whitespace-normal rounded-md border p-3 text-left text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground lg:p-4 ${index === tourIndex ? 'border-brand-gold bg-primary-foreground/10' : 'border-primary-foreground/15'}`}><img src={stop.image} alt="" className="size-14 rounded-sm object-cover" /><span><strong className="block text-sm">{stop.name}</strong><span className="mt-1 block text-xs font-normal text-primary-foreground/55">{stop.label}</span></span></Button>)}
+              {tourStops.map((stop, index) => <Button key={stop.name} variant="ghost" onClick={() => setTourIndex(index)} className={`h-auto justify-start whitespace-normal rounded-md border p-3 text-left text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground lg:p-4 ${index === tourIndex ? 'border-brand-gold bg-primary-foreground/10' : 'border-primary-foreground/15'}`}><img loading="lazy" decoding="async" src={stop.image} alt={`${stop.name} at Kalaskar Toppers Academy`} loading="lazy" decoding="async" width={56} height={56} className="size-14 rounded-sm object-cover" /><span><strong className="block text-sm">{stop.name}</strong><span className="mt-1 block text-xs font-normal text-primary-foreground/55">{stop.label}</span></span></Button>)}
             </div>
           </div>
           <p className="mt-5 text-center text-xs text-primary-foreground/45">Interactive photographic demo · A full 360° scan can be integrated after an on-site capture.</p>
@@ -309,8 +309,8 @@ export function AcademySite() {
             {[{icon:Library,title:'24×7 study culture',copy:'Library and supervised study spaces.'},{icon:Home,title:'Residential hostel',copy:'Purpose-built living for outstation students.'},{icon:Utensils,title:'Quality mess',copy:'Consistent meals that support student routines.'},{icon:Bus,title:'Transport network',copy:'Pickup support across nearby villages.'},{icon:ShieldCheck,title:'Safe environment',copy:'A structured campus with close supervision.'},{icon:Headphones,title:'Doubt support',copy:'Accessible teachers and guided revision.'},{icon:Users,title:'Personal attention',copy:'Performance reviews beyond classroom teaching.'},{icon:Clock3,title:'Disciplined schedule',copy:'A balanced routine of classes, tests and study.'}].map((item) => <article key={item.title} className="rounded-md border border-border p-6 transition-colors hover:border-primary/35 hover:bg-brand-soft"><item.icon className="size-7 text-primary" /><h3 className="mt-5 font-display text-xl font-semibold">{item.title}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{item.copy}</p></article>)}
           </div>
           <div className="mt-5 grid gap-5 lg:grid-cols-[1.25fr_0.75fr]">
-            <img src={facilitiesAsset.url} alt="Academy facilities overview including hostel, transport, library and laboratories" className="h-full max-h-[540px] w-full rounded-md bg-muted object-contain p-3" />
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1"><img src={facultyAsset.url} alt="Academic meeting and guidance room at the academy" className="h-60 w-full rounded-md object-cover lg:h-full" /><img src={campusAsset.url} alt="Kalaskar Toppers Academy building in Kashti" className="h-60 w-full rounded-md object-cover lg:h-full" /></div>
+            <img loading="lazy" decoding="async" src={facilitiesAsset.url} alt="Academy facilities overview including hostel, transport, library and laboratories" className="h-full max-h-[540px] w-full rounded-md bg-muted object-contain p-3" />
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1"><img loading="lazy" decoding="async" src={facultyAsset.url} alt="Academic meeting and guidance room at the academy" className="h-60 w-full rounded-md object-cover lg:h-full" /><img loading="lazy" decoding="async" src={campusAsset.url} alt="Kalaskar Toppers Academy building in Kashti" className="h-60 w-full rounded-md object-cover lg:h-full" /></div>
           </div>
         </div>
       </section>
@@ -318,7 +318,7 @@ export function AcademySite() {
       <section className="bg-brand-soft py-24 sm:py-32">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-2 lg:items-center lg:px-8">
           <div className="relative overflow-hidden rounded-md bg-brand-deep">
-            <img src={classroomAsset.url} alt="A smart classroom at Kalaskar Toppers Academy" className="aspect-[4/3] w-full object-cover opacity-80" />
+            <img loading="lazy" decoding="async" src={classroomAsset.url} alt="A smart classroom at Kalaskar Toppers Academy" className="aspect-[4/3] w-full object-cover opacity-80" />
             <div className="absolute inset-0 grid place-items-center bg-brand-deep/15"><Button size="icon" className="size-20 rounded-full bg-brand-gold text-brand-deep shadow-gold hover:bg-brand-gold/90" aria-label="Play faculty lesson preview"><Play className="size-7 fill-current" /></Button></div>
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-deep to-transparent p-7 pt-20"><p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-gold">Faculty lesson preview</p><h3 className="mt-2 font-display text-2xl text-primary-foreground">See how a difficult concept becomes clear.</h3></div>
           </div>
