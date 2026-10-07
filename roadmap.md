@@ -7,3 +7,5 @@
 - [x] Transport finder, parent portal, reviews, enquiry, and FAQ assistant
 - [x] Validate build and live desktop/mobile interactions
 - [x] Apply and validate the selected premium institutional redesign
+- [x] Remove template documentation branding and the default favicon; hide the published editor badge
+- [ ] Confirm the updated code reaches the requested GitHub repository (requires GitHub sync or an authorized repository connection)
