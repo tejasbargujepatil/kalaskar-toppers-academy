@@ -6,3 +6,4 @@
 - [x] Interactive campus explorer and facilities
 - [x] Transport finder, parent portal, reviews, enquiry, and FAQ assistant
 - [x] Validate build and live desktop/mobile interactions
+- [x] Apply and validate the selected premium institutional redesign

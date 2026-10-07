@@ -92,7 +92,7 @@ const quickAnswers = [
 function BrandMark({ compact = false }: { compact?: boolean }) {
   return (
     <a href="#top" className="group flex items-center gap-3" aria-label="Kalaskar Toppers Academy home">
-      <span className={`grid shrink-0 place-items-center rounded-full border border-brand-gold/35 bg-brand-deep text-brand-gold shadow-emblem ${compact ? "size-10" : "size-12"}`}>
+      <span className={`grid shrink-0 place-items-center border border-brand-gold/35 bg-brand-deep text-brand-gold shadow-emblem ${compact ? "size-10" : "size-12"}`}>
         <Trophy className={compact ? "size-4" : "size-5"} />
       </span>
       <span className="min-w-0 leading-none">
@@ -109,7 +109,7 @@ function SectionHeading({ eyebrow, title, copy, light = false }: { eyebrow: stri
       <p className={`mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] ${light ? "text-brand-gold" : "text-primary"}`}>
         <span className="h-px w-8 bg-current" /> {eyebrow}
       </p>
-      <h2 className={`font-display text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl ${light ? "text-primary-foreground" : "text-foreground"}`}>{title}</h2>
+      <h2 className={`font-display text-4xl font-normal leading-[1.08] sm:text-5xl lg:text-6xl ${light ? "text-primary-foreground" : "text-foreground"}`}>{title}</h2>
       {copy && <p className={`mt-5 max-w-2xl text-base leading-7 ${light ? "text-primary-foreground/70" : "text-muted-foreground"}`}>{copy}</p>}
     </div>
   );
@@ -161,24 +161,24 @@ export function AcademySite() {
 
   return (
     <main id="top" className="overflow-hidden bg-background">
-      <div className="bg-brand-deep px-4 py-2 text-center text-xs font-semibold text-primary-foreground">
+      <div className="bg-brand-deep px-4 py-2.5 text-center text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-primary-foreground sm:text-xs">
         <span className="text-brand-gold">Admissions open for 2026–27</span>
         <span className="mx-3 text-primary-foreground/30">|</span>
         JEE · NEET · MHT-CET · Foundation
         <a href={`tel:+91${PHONE}`} className="ml-3 hidden items-center gap-1.5 text-primary-foreground underline decoration-brand-gold underline-offset-4 sm:inline-flex"><Phone className="size-3" /> +91 {PHONE}</a>
       </div>
 
-      <header className="sticky top-0 z-40 border-b border-border/70 bg-background/95 backdrop-blur-xl">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
+      <header className="sticky top-0 z-40 border-b border-foreground/10 bg-background/95 backdrop-blur-xl">
+        <div className="mx-auto flex h-[84px] max-w-[1400px] items-center justify-between px-5 lg:px-8">
           <BrandMark />
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
             {[["Results", "#results"], ["Courses", "#courses"], ["Campus", "#campus"], ["Scholarship", "#scholarship"], ["Facilities", "#facilities"]].map(([label, href]) => (
-              <a key={label} href={href} className="text-sm font-semibold text-muted-foreground transition-colors hover:text-primary">{label}</a>
+              <a key={label} href={href} className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground transition-colors hover:text-brand-gold">{label}</a>
             ))}
           </nav>
           <div className="hidden items-center gap-3 lg:flex">
-            <Button variant="outline" className="h-11 border-primary/20" onClick={() => setPortalOpen(true)}><LockKeyhole /> Parent login</Button>
-            <Button asChild className="h-11 bg-primary px-5 shadow-cta"><a href="#enquire">Enquire now <ArrowRight /></a></Button>
+            <Button variant="outline" className="h-11 rounded-none border-foreground/20 text-xs uppercase tracking-[0.08em]" onClick={() => setPortalOpen(true)}><LockKeyhole /> Parent login</Button>
+            <Button asChild className="h-11 rounded-none bg-brand-gold px-5 text-brand-deep shadow-none hover:bg-primary hover:text-primary-foreground"><a href="#enquire">Enquire now <ArrowRight /></a></Button>
           </div>
           <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">{mobileOpen ? <X /> : <Menu />}</Button>
         </div>
@@ -194,39 +194,39 @@ export function AcademySite() {
         )}
       </header>
 
-      <section className="relative min-h-[760px] overflow-hidden bg-brand-deep lg:min-h-[810px]">
-        <img src={communityAsset.url} alt="Kalaskar Toppers Academy students outside the Kashti campus" className="absolute inset-0 h-full w-full object-cover object-[60%_center] opacity-55" />
+      <section className="relative min-h-[760px] overflow-hidden bg-brand-deep lg:min-h-[820px]">
+        <img src={communityAsset.url} alt="Kalaskar Toppers Academy students outside the Kashti campus" className="absolute inset-0 h-full w-full object-cover object-[60%_center] grayscale opacity-42" />
         <div className="absolute inset-0 bg-hero-wash" />
         <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-brand-deep to-transparent" />
-        <div className="relative mx-auto flex min-h-[760px] max-w-7xl items-center px-5 pb-28 pt-16 lg:min-h-[810px] lg:px-8">
+        <div className="relative mx-auto flex min-h-[760px] max-w-7xl items-center px-5 pb-20 pt-16 lg:min-h-[820px] lg:px-8">
           <div className="max-w-3xl animate-rise">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-2 text-sm font-semibold text-primary-foreground backdrop-blur-md">
+            <div className="mb-8 inline-flex items-center gap-2 border border-primary-foreground/20 bg-primary-foreground/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-primary-foreground backdrop-blur-md">
               <span className="flex text-brand-gold"><Star className="size-4 fill-current" /></span> 4.9 rated by 413 families
             </div>
-            <p className="mb-4 font-devanagari text-xl font-bold text-brand-gold sm:text-2xl">कळसकर सरांचे टॉपर्स अकॅडेमी, काष्टी</p>
-            <h1 className="max-w-3xl font-display text-5xl font-semibold leading-[0.98] text-primary-foreground sm:text-7xl lg:text-[5.4rem]">
-              Where ambition gets a <span className="text-brand-gold">rank.</span>
+            <p className="mb-4 font-devanagari text-xl font-semibold text-brand-gold sm:text-2xl">कळसकर सरांचे टॉपर्स अकॅडेमी, काष्टी</p>
+            <h1 className="max-w-4xl font-display text-5xl font-normal leading-[1.02] text-primary-foreground sm:text-7xl lg:text-[5.75rem]">
+              Where ambition<br />gets a <span className="italic text-brand-gold">rank.</span>
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-8 text-primary-foreground/78">Focused JEE, NEET and MHT-CET preparation with expert teachers, rigorous testing and a residential ecosystem built around every student.</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button size="lg" className="h-14 bg-brand-gold px-7 text-brand-deep shadow-gold hover:bg-brand-gold/90" onClick={() => setMockOpen(true)}><Zap /> Take a free mock test</Button>
-              <Button size="lg" variant="outline" className="h-14 border-primary-foreground/30 bg-primary-foreground/10 px-7 text-primary-foreground backdrop-blur hover:bg-primary-foreground/20 hover:text-primary-foreground" asChild><a href="#campus"><Play /> Explore campus</a></Button>
+               <Button size="lg" className="h-14 rounded-none bg-brand-gold px-8 text-xs uppercase tracking-[0.14em] text-brand-deep shadow-none hover:bg-primary-foreground" onClick={() => setMockOpen(true)}><Zap /> Take a free mock test</Button>
+               <Button size="lg" variant="outline" className="h-14 rounded-none border-primary-foreground/30 bg-transparent px-8 text-xs uppercase tracking-[0.14em] text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" asChild><a href="#campus"><Play /> Explore campus</a></Button>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm font-medium text-primary-foreground/70">
               {['Daily tests & analysis', 'Hostel & mess', 'Transport available'].map((item) => <span key={item} className="flex items-center gap-2"><CircleCheck className="size-4 text-brand-gold" /> {item}</span>)}
             </div>
           </div>
         </div>
-        <div className="absolute inset-x-0 bottom-0 border-t border-primary-foreground/15 bg-brand-deep/88 backdrop-blur-md">
+        <div className="absolute inset-x-0 bottom-0 border-t border-primary-foreground/15 bg-brand-deep/92 backdrop-blur-md">
           <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-primary-foreground/15 px-5 sm:grid-cols-4 lg:px-8">
             {[['600–800+', 'Student community'], ['4.9 / 5', 'Google rating'], ['413', 'Public reviews'], ['2026', 'Admissions open']].map(([value, label]) => (
-              <div key={label} className="px-4 py-5 sm:px-7"><strong className="block font-display text-2xl text-brand-gold sm:text-3xl">{value}</strong><span className="mt-1 block text-xs font-semibold uppercase tracking-[0.13em] text-primary-foreground/55">{label}</span></div>
+               <div key={label} className="px-4 py-5 sm:px-7"><strong className="block font-display text-2xl font-normal text-primary-foreground sm:text-3xl">{value}</strong><span className="mt-1 block text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-primary-foreground/45">{label}</span></div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="results" className="py-24 sm:py-32">
+      <section id="results" className="py-24 sm:py-36">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <SectionHeading eyebrow="Results that speak" title="Meet the students who raised the bar." copy="Explore recent achievers across competitive exams. Every score represents disciplined practice, close mentoring and a family that believed." />
@@ -236,30 +236,30 @@ export function AcademySite() {
             </div>
           </div>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {filteredToppers.map((topper, index) => (
-              <article key={topper.name} className={`group relative overflow-hidden rounded-md border bg-card p-6 transition-all hover:-translate-y-1 hover:shadow-premium ${index === 0 ? "border-brand-gold/60" : "border-border"}`}>
+              <article key={topper.name} className={`group relative overflow-hidden border bg-card p-8 transition-all hover:-translate-y-1 hover:border-brand-gold hover:shadow-premium ${index === 0 ? "border-brand-gold" : "border-border"}`}>
                 {index === 0 && <div className="absolute right-0 top-0 bg-brand-gold px-3 py-1 text-[0.65rem] font-extrabold uppercase tracking-wider text-brand-deep">Featured</div>}
-                <div className="flex items-center gap-4"><div className="grid size-16 shrink-0 place-items-center rounded-full bg-primary text-lg font-bold text-primary-foreground ring-4 ring-brand-gold/20">{topper.initials}</div><div><p className="text-xs font-bold uppercase tracking-[0.16em] text-primary">{topper.rank}</p><h3 className="mt-1 font-display text-xl font-semibold">{topper.name}</h3></div></div>
-                <div className="mt-7 flex items-end justify-between border-t border-border pt-5"><div><span className="block text-xs text-muted-foreground">{topper.exam} · {topper.year}</span><strong className="mt-1 block font-display text-3xl text-foreground">{topper.score}<span className="text-base text-muted-foreground">{topper.exam === 'JEE Main' ? '%ile' : ' marks'}</span></strong></div><Award className="size-7 text-brand-gold" /></div>
+                 <div className="flex items-center gap-5"><div className="grid size-16 shrink-0 place-items-center bg-primary text-lg font-bold text-primary-foreground">{topper.initials}</div><div><p className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-brand-gold">{topper.rank}</p><h3 className="mt-1 font-display text-xl font-normal">{topper.name}</h3></div></div>
+                 <div className="mt-8 flex items-end justify-between border-t border-border pt-6"><div><span className="block text-[0.65rem] uppercase tracking-[0.14em] text-muted-foreground">{topper.exam} · {topper.year}</span><strong className="mt-2 block font-display text-3xl font-normal text-foreground">{topper.score}<span className="ml-1 text-sm text-muted-foreground">{topper.exam === 'JEE Main' ? '%ile' : ' marks'}</span></strong></div><Award className="size-7 text-brand-gold" /></div>
               </article>
             ))}
           </div>
-          <div className="mt-10 overflow-hidden rounded-md bg-brand-soft p-4 sm:p-6">
+          <div className="mt-14 overflow-hidden border border-foreground/10 bg-brand-soft p-4 sm:p-7">
             <div className="grid items-center gap-6 lg:grid-cols-[0.75fr_1.25fr]">
-              <img src={resultAsset.url} alt="JEE Main 2026 results poster showing Kalaskar Toppers Academy achievers" className="mx-auto max-h-[430px] w-full max-w-md rounded-sm object-contain shadow-premium" />
-              <div className="px-2 sm:px-7"><p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">JEE Main 2026</p><h3 className="mt-4 font-display text-3xl font-semibold sm:text-4xl">Three academy toppers above 99 percentile.</h3><p className="mt-4 max-w-xl leading-7 text-muted-foreground">A culture of consistent tests, doubt-solving and individual performance reviews helps students turn preparation into measurable outcomes.</p><Button className="mt-7" asChild><a href="#enquire">Plan your preparation <ArrowRight /></a></Button></div>
+              <img src={resultAsset.url} alt="JEE Main 2026 results poster showing Kalaskar Toppers Academy achievers" className="mx-auto max-h-[430px] w-full max-w-md object-contain shadow-premium" />
+              <div className="px-2 sm:px-9"><p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-gold">JEE Main 2026</p><h3 className="mt-5 font-display text-3xl font-normal sm:text-4xl">Three academy toppers above 99 percentile.</h3><p className="mt-5 max-w-xl leading-7 text-muted-foreground">A culture of consistent tests, doubt-solving and individual performance reviews helps students turn preparation into measurable outcomes.</p><Button className="mt-8 rounded-none bg-primary px-7 text-xs uppercase tracking-[0.12em]" asChild><a href="#enquire">Plan your preparation <ArrowRight /></a></Button></div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="courses" className="bg-brand-soft py-24 sm:py-32">
+      <section id="courses" className="border-y border-foreground/10 bg-brand-soft py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <SectionHeading eyebrow="Academic pathways" title="One goal. A sharper plan to reach it." copy="Choose a focused preparation pathway backed by concept clarity, daily discipline and frequent performance checks." />
-          <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-3">
+          <div className="mt-14 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-3">
             {[{icon:Microscope,title:'NEET',sub:'Medical entrance',copy:'Concept mastery, NCERT depth and high-frequency testing across Physics, Chemistry and Biology.',tag:'XI–XII + Repeaters'}, {icon:Zap,title:'JEE + MHT-CET',sub:'Engineering entrance',copy:'Problem-solving depth, speed training and targeted preparation for national and state engineering entrances.',tag:'XI–XII + Repeaters'}, {icon:BookOpen,title:'Foundation',sub:'Build early advantage',copy:'Strong fundamentals, reasoning and exam temperament for students preparing ahead from school years.',tag:'VIII–X'}].map((course) => (
-              <article key={course.title} className="bg-card p-8 sm:p-10"><course.icon className="size-9 text-primary" /><p className="mt-8 text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">{course.sub}</p><h3 className="mt-2 font-display text-3xl font-semibold">{course.title}</h3><p className="mt-4 min-h-24 leading-7 text-muted-foreground">{course.copy}</p><div className="mt-8 flex items-center justify-between border-t border-border pt-5"><span className="text-sm font-bold text-primary">{course.tag}</span><ArrowRight className="size-5 text-primary" /></div></article>
+              <article key={course.title} className="bg-card p-8 transition-colors hover:bg-background sm:p-10"><course.icon className="size-9 text-brand-gold" /><p className="mt-10 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-muted-foreground">{course.sub}</p><h3 className="mt-3 font-display text-3xl font-normal">{course.title}</h3><p className="mt-5 min-h-24 leading-7 text-muted-foreground">{course.copy}</p><div className="mt-8 flex items-center justify-between border-t border-border pt-5"><span className="text-xs font-bold uppercase tracking-[0.12em] text-primary">{course.tag}</span><ArrowRight className="size-5 text-brand-gold" /></div></article>
             ))}
           </div>
         </div>
