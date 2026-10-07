@@ -3,7 +3,7 @@ import {
   ArrowRight,
   Award,
   BookOpen,
-  Bot,
+
   Bus,
   Check,
   ChevronDown,
@@ -41,15 +41,15 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import buildingAsset from "@/assets/academy-building.png.asset.json";
-import resultAsset from "@/assets/jee-result-2026.png.asset.json";
-import facultyAsset from "@/assets/faculty-room.png.asset.json";
-import classroomAsset from "@/assets/smart-classroom.png.asset.json";
-import facilitiesAsset from "@/assets/academy-facilities.png.asset.json";
-import examAsset from "@/assets/exam-hall.png.asset.json";
-import campusAsset from "@/assets/academy-campus.png.asset.json";
-import hostelAsset from "@/assets/hostel-building.png.asset.json";
-import communityAsset from "@/assets/student-community.png.asset.json";
+import buildingAsset from "@/assets/academy-building.webp.asset.json";
+import resultAsset from "@/assets/jee-result-2026.webp.asset.json";
+import facultyAsset from "@/assets/faculty-room.webp.asset.json";
+import classroomAsset from "@/assets/smart-classroom.webp.asset.json";
+import facilitiesAsset from "@/assets/academy-facilities.webp.asset.json";
+import examAsset from "@/assets/exam-hall.webp.asset.json";
+import campusAsset from "@/assets/academy-campus.webp.asset.json";
+import hostelAsset from "@/assets/hostel-building.webp.asset.json";
+import communityAsset from "@/assets/student-community.webp.asset.json";
 
 const PHONE = "9657575252";
 const WHATSAPP = `https://wa.me/91${PHONE}?text=${encodeURIComponent("Namaskar, I would like to know more about admissions at Kalaskar Toppers Academy.")}`;
@@ -83,8 +83,16 @@ const routes = [
   { place: "Daund", distance: "28 km", time: "06:15 AM", route: "Route D3" },
 ];
 
+export const faqs = [
+  { q: "Which courses does Kalaskar Toppers Academy offer?", a: "JEE, NEET and MHT-CET preparation for Classes XI-XII and repeaters, plus Foundation programmes for Classes VIII-X." },
+  { q: "Is hostel accommodation available?", a: "Yes. The academy offers residential hostel facilities with mess, supervised study hours and mentor support." },
+  { q: "Does the academy provide transport?", a: "Yes. Academy buses run morning and evening routes covering Kashti, Shrigonda, Belwandi, Daund and nearby villages." },
+  { q: "Are scholarships available?", a: "Merit-based fee concessions are available based on Class 10 board marks or entrance test scores. Counselling confirms final eligibility." },
+  { q: "Where is the academy located?", a: "Shrigonda Road Chowk, next to Sagar Traders, Kashti, Shrigonda Tehsil, Ahilyanagar, Maharashtra 414701." },
+];
+
 const quickAnswers = [
-  { question: "When do admissions close?", answer: "Admissions for 2026–27 are currently open. The team can confirm seat availability for your course." },
+  { question: "When do admissions close?", answer: "Admissions for 2026-27 are currently open. The team can confirm seat availability for your course." },
   { question: "Is hostel available?", answer: "Yes, the academy offers residential hostel and mess facilities. Availability is confirmed during counselling." },
   { question: "मराठीत माहिती", answer: "नमस्कार! प्रवेश, बॅच, वसतिगृह आणि वाहतूक याबद्दल माहितीसाठी खाली WhatsApp वर संपर्क करा." },
 ];
@@ -162,7 +170,7 @@ export function AcademySite() {
   return (
     <main id="top" className="overflow-hidden bg-background">
       <div className="bg-brand-deep px-4 py-2.5 text-center text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-primary-foreground sm:text-xs">
-        <span className="text-brand-gold">Admissions open for 2026–27</span>
+        <span className="text-brand-gold">Admissions open for 2026-27</span>
         <span className="mx-3 text-primary-foreground/30">|</span>
         JEE · NEET · MHT-CET · Foundation
         <a href={`tel:+91${PHONE}`} className="ml-3 hidden items-center gap-1.5 text-primary-foreground underline decoration-brand-gold underline-offset-4 sm:inline-flex"><Phone className="size-3" /> +91 {PHONE}</a>
@@ -195,7 +203,7 @@ export function AcademySite() {
       </header>
 
       <section className="relative min-h-[760px] overflow-hidden bg-brand-deep lg:min-h-[820px]">
-        <img src={communityAsset.url} alt="Kalaskar Toppers Academy students outside the Kashti campus" className="absolute inset-0 h-full w-full object-cover object-[60%_center] grayscale opacity-42" />
+        <img src={communityAsset.url} fetchPriority="high" width={1600} height={900} alt="Kalaskar Toppers Academy students outside the Kashti campus" className="absolute inset-0 h-full w-full object-cover object-[60%_center] grayscale opacity-42" />
         <div className="absolute inset-0 bg-hero-wash" />
         <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-brand-deep to-transparent" />
         <div className="relative mx-auto flex min-h-[760px] max-w-7xl items-center px-5 pb-20 pt-16 lg:min-h-[820px] lg:px-8">
@@ -219,7 +227,7 @@ export function AcademySite() {
         </div>
         <div className="absolute inset-x-0 bottom-0 border-t border-primary-foreground/15 bg-brand-deep/92 backdrop-blur-md">
           <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-primary-foreground/15 px-5 sm:grid-cols-4 lg:px-8">
-            {[['600–800+', 'Student community'], ['4.9 / 5', 'Google rating'], ['413', 'Public reviews'], ['2026', 'Admissions open']].map(([value, label]) => (
+            {[['600-800+', 'Student community'], ['4.9 / 5', 'Google rating'], ['413', 'Public reviews'], ['2026', 'Admissions open']].map(([value, label]) => (
                <div key={label} className="px-4 py-5 sm:px-7"><strong className="block font-display text-2xl font-normal text-primary-foreground sm:text-3xl">{value}</strong><span className="mt-1 block text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-primary-foreground/45">{label}</span></div>
             ))}
           </div>
@@ -247,7 +255,7 @@ export function AcademySite() {
           </div>
           <div className="mt-14 overflow-hidden border border-foreground/10 bg-brand-soft p-4 sm:p-7">
             <div className="grid items-center gap-6 lg:grid-cols-[0.75fr_1.25fr]">
-              <img src={resultAsset.url} alt="JEE Main 2026 results poster showing Kalaskar Toppers Academy achievers" className="mx-auto max-h-[430px] w-full max-w-md object-contain shadow-premium" />
+              <img loading="lazy" decoding="async" src={resultAsset.url} alt="JEE Main 2026 results poster showing Kalaskar Toppers Academy achievers" className="mx-auto max-h-[430px] w-full max-w-md object-contain shadow-premium" />
               <div className="px-2 sm:px-9"><p className="text-xs font-bold uppercase tracking-[0.22em] text-brand-gold">JEE Main 2026</p><h3 className="mt-5 font-display text-3xl font-normal sm:text-4xl">Three academy toppers above 99 percentile.</h3><p className="mt-5 max-w-xl leading-7 text-muted-foreground">A culture of consistent tests, doubt-solving and individual performance reviews helps students turn preparation into measurable outcomes.</p><Button className="mt-8 rounded-none bg-primary px-7 text-xs uppercase tracking-[0.12em]" asChild><a href="#enquire">Plan your preparation <ArrowRight /></a></Button></div>
             </div>
           </div>
@@ -258,7 +266,7 @@ export function AcademySite() {
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <SectionHeading eyebrow="Academic pathways" title="One goal. A sharper plan to reach it." copy="Choose a focused preparation pathway backed by concept clarity, daily discipline and frequent performance checks." />
           <div className="mt-14 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-3">
-            {[{icon:Microscope,title:'NEET',sub:'Medical entrance',copy:'Concept mastery, NCERT depth and high-frequency testing across Physics, Chemistry and Biology.',tag:'XI–XII + Repeaters'}, {icon:Zap,title:'JEE + MHT-CET',sub:'Engineering entrance',copy:'Problem-solving depth, speed training and targeted preparation for national and state engineering entrances.',tag:'XI–XII + Repeaters'}, {icon:BookOpen,title:'Foundation',sub:'Build early advantage',copy:'Strong fundamentals, reasoning and exam temperament for students preparing ahead from school years.',tag:'VIII–X'}].map((course) => (
+            {[{icon:Microscope,title:'NEET',sub:'Medical entrance',copy:'Concept mastery, NCERT depth and high-frequency testing across Physics, Chemistry and Biology.',tag:'XI-XII + Repeaters'}, {icon:Zap,title:'JEE + MHT-CET',sub:'Engineering entrance',copy:'Problem-solving depth, speed training and targeted preparation for national and state engineering entrances.',tag:'XI-XII + Repeaters'}, {icon:BookOpen,title:'Foundation',sub:'Build early advantage',copy:'Strong fundamentals, reasoning and exam temperament for students preparing ahead from school years.',tag:'VIII-X'}].map((course) => (
               <article key={course.title} className="bg-card p-8 transition-colors hover:bg-background sm:p-10"><course.icon className="size-9 text-brand-gold" /><p className="mt-10 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-muted-foreground">{course.sub}</p><h3 className="mt-3 font-display text-3xl font-normal">{course.title}</h3><p className="mt-5 min-h-24 leading-7 text-muted-foreground">{course.copy}</p><div className="mt-8 flex items-center justify-between border-t border-border pt-5"><span className="text-xs font-bold uppercase tracking-[0.12em] text-primary">{course.tag}</span><ArrowRight className="size-5 text-brand-gold" /></div></article>
             ))}
           </div>
@@ -289,13 +297,13 @@ export function AcademySite() {
           </div>
           <div className="mt-12 grid gap-5 lg:grid-cols-[1fr_310px]">
             <div className="campus-stage group relative min-h-[500px] overflow-hidden rounded-md bg-muted sm:min-h-[620px]">
-              <img key={currentTour.image} src={currentTour.image} alt={currentTour.name} className="absolute inset-0 h-full w-full animate-soft-zoom object-cover" />
+              <img loading="lazy" decoding="async" key={currentTour.image} src={currentTour.image} alt={currentTour.name} className="absolute inset-0 h-full w-full animate-soft-zoom object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-deep via-transparent to-brand-deep/10" />
               <div className="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-brand-deep/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] backdrop-blur"><span className="size-2 animate-pulse rounded-full bg-brand-gold" /> Interactive tour · {tourIndex + 1}/{tourStops.length}</div>
               <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10"><p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-gold">{currentTour.label}</p><h3 className="mt-2 font-display text-4xl font-semibold sm:text-5xl">{currentTour.name}</h3><p className="mt-3 max-w-xl text-sm leading-6 text-primary-foreground/72 sm:text-base">{currentTour.detail}</p></div>
             </div>
             <div className="grid grid-cols-2 gap-3 lg:grid-cols-1">
-              {tourStops.map((stop, index) => <Button key={stop.name} variant="ghost" onClick={() => setTourIndex(index)} className={`h-auto justify-start whitespace-normal rounded-md border p-3 text-left text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground lg:p-4 ${index === tourIndex ? 'border-brand-gold bg-primary-foreground/10' : 'border-primary-foreground/15'}`}><img src={stop.image} alt="" className="size-14 rounded-sm object-cover" /><span><strong className="block text-sm">{stop.name}</strong><span className="mt-1 block text-xs font-normal text-primary-foreground/55">{stop.label}</span></span></Button>)}
+              {tourStops.map((stop, index) => <Button key={stop.name} variant="ghost" onClick={() => setTourIndex(index)} className={`h-auto justify-start whitespace-normal rounded-md border p-3 text-left text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground lg:p-4 ${index === tourIndex ? 'border-brand-gold bg-primary-foreground/10' : 'border-primary-foreground/15'}`}><img src={stop.image} alt={`${stop.name} at Kalaskar Toppers Academy`} loading="lazy" decoding="async" width={56} height={56} className="size-14 rounded-sm object-cover" /><span><strong className="block text-sm">{stop.name}</strong><span className="mt-1 block text-xs font-normal text-primary-foreground/55">{stop.label}</span></span></Button>)}
             </div>
           </div>
           <p className="mt-5 text-center text-xs text-primary-foreground/45">Interactive photographic demo · A full 360° scan can be integrated after an on-site capture.</p>
@@ -309,8 +317,8 @@ export function AcademySite() {
             {[{icon:Library,title:'24×7 study culture',copy:'Library and supervised study spaces.'},{icon:Home,title:'Residential hostel',copy:'Purpose-built living for outstation students.'},{icon:Utensils,title:'Quality mess',copy:'Consistent meals that support student routines.'},{icon:Bus,title:'Transport network',copy:'Pickup support across nearby villages.'},{icon:ShieldCheck,title:'Safe environment',copy:'A structured campus with close supervision.'},{icon:Headphones,title:'Doubt support',copy:'Accessible teachers and guided revision.'},{icon:Users,title:'Personal attention',copy:'Performance reviews beyond classroom teaching.'},{icon:Clock3,title:'Disciplined schedule',copy:'A balanced routine of classes, tests and study.'}].map((item) => <article key={item.title} className="rounded-md border border-border p-6 transition-colors hover:border-primary/35 hover:bg-brand-soft"><item.icon className="size-7 text-primary" /><h3 className="mt-5 font-display text-xl font-semibold">{item.title}</h3><p className="mt-2 text-sm leading-6 text-muted-foreground">{item.copy}</p></article>)}
           </div>
           <div className="mt-5 grid gap-5 lg:grid-cols-[1.25fr_0.75fr]">
-            <img src={facilitiesAsset.url} alt="Academy facilities overview including hostel, transport, library and laboratories" className="h-full max-h-[540px] w-full rounded-md bg-muted object-contain p-3" />
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1"><img src={facultyAsset.url} alt="Academic meeting and guidance room at the academy" className="h-60 w-full rounded-md object-cover lg:h-full" /><img src={campusAsset.url} alt="Kalaskar Toppers Academy building in Kashti" className="h-60 w-full rounded-md object-cover lg:h-full" /></div>
+            <img loading="lazy" decoding="async" src={facilitiesAsset.url} alt="Academy facilities overview including hostel, transport, library and laboratories" className="h-full max-h-[540px] w-full rounded-md bg-muted object-contain p-3" />
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1"><img loading="lazy" decoding="async" src={facultyAsset.url} alt="Academic meeting and guidance room at the academy" className="h-60 w-full rounded-md object-cover lg:h-full" /><img loading="lazy" decoding="async" src={campusAsset.url} alt="Kalaskar Toppers Academy building in Kashti" className="h-60 w-full rounded-md object-cover lg:h-full" /></div>
           </div>
         </div>
       </section>
@@ -318,11 +326,11 @@ export function AcademySite() {
       <section className="bg-brand-soft py-24 sm:py-32">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-2 lg:items-center lg:px-8">
           <div className="relative overflow-hidden rounded-md bg-brand-deep">
-            <img src={classroomAsset.url} alt="A smart classroom at Kalaskar Toppers Academy" className="aspect-[4/3] w-full object-cover opacity-80" />
+            <img loading="lazy" decoding="async" src={classroomAsset.url} alt="A smart classroom at Kalaskar Toppers Academy" className="aspect-[4/3] w-full object-cover opacity-80" />
             <div className="absolute inset-0 grid place-items-center bg-brand-deep/15"><Button size="icon" className="size-20 rounded-full bg-brand-gold text-brand-deep shadow-gold hover:bg-brand-gold/90" aria-label="Play faculty lesson preview"><Play className="size-7 fill-current" /></Button></div>
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-deep to-transparent p-7 pt-20"><p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-gold">Faculty lesson preview</p><h3 className="mt-2 font-display text-2xl text-primary-foreground">See how a difficult concept becomes clear.</h3></div>
           </div>
-          <div><SectionHeading eyebrow="Teaching before telling" title="Experience the classroom before you enrol." copy="Short concept sessions let students and parents understand the academy’s teaching style, pace and emphasis on fundamentals." /><div className="mt-8 grid gap-3 sm:grid-cols-2">{['Concept-first teaching','Bilingual explanations','Exam-focused practice','Accessible doubt solving'].map((item)=><div key={item} className="flex items-center gap-3 border-b border-border py-3 text-sm font-semibold"><Check className="size-4 text-primary" />{item}</div>)}</div><Button className="mt-8" onClick={() => setMockOpen(true)}>Try the diagnostic test <ArrowRight /></Button></div>
+          <div><SectionHeading eyebrow="Teaching before telling" title="Experience the classroom before you enrol." copy="Short concept sessions let students and parents understand the academy's teaching style, pace and emphasis on fundamentals." /><div className="mt-8 grid gap-3 sm:grid-cols-2">{['Concept-first teaching','Bilingual explanations','Exam-focused practice','Accessible doubt solving'].map((item)=><div key={item} className="flex items-center gap-3 border-b border-border py-3 text-sm font-semibold"><Check className="size-4 text-primary" />{item}</div>)}</div><Button className="mt-8" onClick={() => setMockOpen(true)}>Try the diagnostic test <ArrowRight /></Button></div>
         </div>
       </section>
 
@@ -331,10 +339,43 @@ export function AcademySite() {
           <div className="grid overflow-hidden rounded-md border border-border lg:grid-cols-2">
             <div className="bg-card p-7 sm:p-10">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Smart transport finder</p><h2 className="mt-4 font-display text-3xl font-semibold sm:text-4xl">Find your nearest pickup.</h2><p className="mt-3 leading-7 text-muted-foreground">Search a nearby town or landmark to preview the closest demo route and morning pickup.</p>
-              <div className="relative mt-7"><MapPin className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-primary" /><Input value={routeQuery} onChange={(e)=>setRouteQuery(e.target.value)} placeholder="Try Kashti, Shrigonda, Belwandi…" className="h-12 pl-12" /></div>
+              <div className="relative mt-7"><MapPin className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-primary" /><Input value={routeQuery} onChange={(e)=>setRouteQuery(e.target.value)} placeholder="Try Kashti, Shrigonda, Belwandi..." className="h-12 pl-12" /></div>
               <div className="mt-5 space-y-2">{filteredRoutes.length ? filteredRoutes.map((route)=><div key={route.place} className="flex items-center justify-between rounded-md bg-brand-soft p-4"><div><strong className="block text-sm">{route.place}</strong><span className="text-xs text-muted-foreground">{route.distance} · {route.route}</span></div><span className="rounded-sm bg-primary px-3 py-1.5 text-xs font-bold text-primary-foreground">{route.time}</span></div>) : <p className="rounded-md bg-brand-soft p-5 text-sm text-muted-foreground">No demo route found. Ask the admissions team to confirm pickup availability.</p>}</div>
             </div>
-            <div className="relative min-h-[430px] overflow-hidden bg-brand-deep p-7 text-primary-foreground sm:p-10"><div className="absolute inset-0 opacity-20 map-grid" /><div className="relative"><Bus className="size-10 text-brand-gold" /><h3 className="mt-6 font-display text-3xl font-semibold">From village to classroom, with less uncertainty.</h3><p className="mt-4 max-w-md leading-7 text-primary-foreground/65">The final website can map every operational stop, route and timing for parents in one clear view.</p><div className="relative mt-12 h-44"><span className="absolute left-[8%] top-[50%] size-4 rounded-full border-4 border-brand-gold bg-brand-deep" /><span className="absolute right-[12%] top-[8%] size-5 rounded-full border-4 border-brand-gold bg-brand-deep" /><span className="absolute left-[10%] right-[14%] top-[48%] h-1 origin-left -rotate-[18deg] bg-brand-gold/70" /><span className="absolute left-[42%] top-[28%] grid size-12 place-items-center rounded-full bg-brand-gold text-brand-deep shadow-gold"><Bus className="size-5" /></span><span className="absolute bottom-2 right-0 text-xs font-bold uppercase tracking-[0.16em] text-brand-gold">Academy campus</span></div></div></div>
+            <div className="relative overflow-hidden bg-brand-deep text-primary-foreground">
+              <div className="flex items-center justify-between border-b border-primary-foreground/10 px-7 py-5 sm:px-10">
+                <div className="flex items-center gap-3"><span className="grid size-9 place-items-center border border-brand-gold/40 text-brand-gold"><Bus className="size-4" /></span><div><p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-brand-gold">Transport network</p><p className="font-display text-lg">Morning departures</p></div></div>
+                <span className="flex items-center gap-2 text-[0.65rem] font-bold uppercase tracking-[0.18em] text-primary-foreground/50"><span className="size-1.5 rounded-full bg-success" /> Daily service</span>
+              </div>
+              <div className="relative px-7 py-8 sm:px-10">
+                <svg viewBox="0 0 400 210" className="h-auto w-full" role="img" aria-label="Schematic route map with four bus routes converging on the Kashti campus">
+                  <defs><pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" className="fill-primary-foreground/10" /></pattern></defs>
+                  <rect width="400" height="210" fill="url(#dots)" />
+                  {[
+                    { d: "M30 30 C120 30 180 100 300 105", x: 30, y: 30, label: "Daund · D3" },
+                    { d: "M30 180 C120 180 180 110 300 105", x: 30, y: 180, label: "Shrigonda · S2" },
+                    { d: "M120 15 C160 60 220 100 300 105", x: 120, y: 15, label: "Belwandi · B1" },
+                    { d: "M200 195 C240 150 260 110 300 105", x: 200, y: 195, label: "Kashti stand · K1" },
+                  ].map((r) => (
+                    <g key={r.label}>
+                      <path d={r.d} fill="none" className="stroke-brand-gold/60" strokeWidth="1.5" strokeDasharray="4 4" />
+                      <circle cx={r.x} cy={r.y} r="4" className="fill-brand-deep stroke-brand-gold" strokeWidth="2" />
+                      <text x={r.x + 9} y={r.y + 4} className="fill-primary-foreground/70" fontSize="10" fontFamily="IBM Plex Sans">{r.label}</text>
+                    </g>
+                  ))}
+                  <circle cx="300" cy="105" r="18" className="fill-brand-gold/15" />
+                  <rect x="292" y="97" width="16" height="16" className="fill-brand-gold" />
+                  <text x="324" y="102" className="fill-primary-foreground" fontSize="11" fontWeight="700" fontFamily="IBM Plex Sans">Campus</text>
+                  <text x="324" y="116" className="fill-primary-foreground/50" fontSize="9" fontFamily="IBM Plex Sans">Kashti</text>
+                </svg>
+              </div>
+              <div className="grid grid-cols-3 border-t border-primary-foreground/10">
+                {[["4", "Active routes"], ["06:15", "Earliest pickup"], ["30 km", "Service radius"]].map(([v, l]) => (
+                  <div key={l} className="border-r border-primary-foreground/10 px-5 py-5 last:border-r-0 sm:px-8"><strong className="block font-display text-2xl text-brand-gold">{v}</strong><span className="mt-1 block text-[0.65rem] font-bold uppercase tracking-[0.16em] text-primary-foreground/45">{l}</span></div>
+                ))}
+              </div>
+              <p className="border-t border-primary-foreground/10 px-7 py-4 text-xs text-primary-foreground/45 sm:px-10">Indicative demo routes. Final timings are confirmed by the transport office.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -344,18 +385,44 @@ export function AcademySite() {
           <SectionHeading light eyebrow="Parent confidence" title="Accountability you can see." copy="The parent portal preview demonstrates how attendance, test performance and mentor observations can stay visible throughout the academic year." />
           <div className="mt-12 grid gap-5 lg:grid-cols-[1fr_0.85fr]">
             <div className="rounded-md border border-primary-foreground/15 bg-primary-foreground/7 p-5 sm:p-8"><div className="flex flex-col justify-between gap-4 border-b border-primary-foreground/15 pb-6 sm:flex-row sm:items-center"><div><p className="text-sm text-primary-foreground/55">Student overview</p><h3 className="mt-1 font-display text-2xl">Aarav K. · JEE Batch A</h3></div><span className="w-fit rounded-sm bg-success/15 px-3 py-2 text-xs font-bold text-success">On track</span></div><div className="mt-7 grid gap-4 sm:grid-cols-3">{[['94%','Attendance'],['87%','Latest test'],['+12','Score growth']].map(([value,label])=><div key={label} className="rounded-md bg-primary-foreground/7 p-5"><strong className="font-display text-3xl text-brand-gold">{value}</strong><span className="mt-2 block text-xs uppercase tracking-wider text-primary-foreground/45">{label}</span></div>)}</div><div className="mt-7"><div className="mb-3 flex justify-between text-sm"><span>Physics mastery</span><span className="text-primary-foreground/55">82%</span></div><Progress value={82} className="bg-primary-foreground/10 [&>div]:bg-brand-gold" /><div className="mb-3 mt-5 flex justify-between text-sm"><span>Chemistry mastery</span><span className="text-primary-foreground/55">91%</span></div><Progress value={91} className="bg-primary-foreground/10 [&>div]:bg-brand-gold" /></div></div>
-            <div className="flex flex-col justify-between rounded-md bg-brand-gold p-7 text-brand-deep sm:p-9"><div><LockKeyhole className="size-9" /><h3 className="mt-7 font-display text-3xl font-semibold">One view for parents. One clear path for students.</h3><p className="mt-4 leading-7 text-brand-deep/70">Attendance, OMR analysis, test trends, homework and mentor notes—designed to reduce guesswork.</p></div><Button className="mt-10 h-12 bg-brand-deep text-primary-foreground hover:bg-brand-deep/90" onClick={()=>setPortalOpen(true)}>Open portal preview <ExternalLink /></Button></div>
+            <div className="flex flex-col justify-between rounded-md bg-brand-gold p-7 text-brand-deep sm:p-9"><div><LockKeyhole className="size-9" /><h3 className="mt-7 font-display text-3xl font-semibold">One view for parents. One clear path for students.</h3><p className="mt-4 leading-7 text-brand-deep/70">Attendance, OMR analysis, test trends, homework and mentor notes, designed to reduce guesswork.</p></div><Button className="mt-10 h-12 bg-brand-deep text-primary-foreground hover:bg-brand-deep/90" onClick={()=>setPortalOpen(true)}>Open portal preview <ExternalLink /></Button></div>
           </div>
         </div>
       </section>
 
       <section className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8"><div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]"><div><SectionHeading eyebrow="Voices of confidence" title="Trusted by students. Recommended by families." /><div className="mt-7 flex items-center gap-4"><strong className="font-display text-6xl">4.9</strong><div><div className="flex text-brand-gold">{[1,2,3,4,5].map((item)=><Star key={item} className="size-5 fill-current" />)}</div><p className="mt-1 text-sm text-muted-foreground">Based on 413 Google reviews</p></div></div></div><div className="grid gap-4 sm:grid-cols-2">{[{name:'Mohini Mhaske',quote:'In two years I experienced that I increased my knowledge only because of Toppers Academy and their brilliant team. All teachers are well educated.'},{name:'Vini Datir',quote:'The academy is very good. Teaching faculty is very helpful and teaching is excellent. Overall experience is very good.'}].map((review)=><blockquote key={review.name} className="rounded-md border border-border bg-card p-7"><Quote className="size-8 text-brand-gold" /><p className="mt-6 text-base leading-7 text-foreground">“{review.quote}”</p><footer className="mt-6 flex items-center justify-between border-t border-border pt-5"><strong className="text-sm">{review.name}</strong><div className="flex text-brand-gold">{[1,2,3,4,5].map((item)=><Star key={item} className="size-3.5 fill-current" />)}</div></footer></blockquote>)}</div></div></div>
+        <div className="mx-auto max-w-7xl px-5 lg:px-8"><div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]"><div><SectionHeading eyebrow="Voices of confidence" title="Trusted by students. Recommended by families." /><div className="mt-7 flex items-center gap-4"><strong className="font-display text-6xl">4.9</strong><div><div className="flex text-brand-gold">{[1,2,3,4,5].map((item)=><Star key={item} className="size-5 fill-current" />)}</div><p className="mt-1 text-sm text-muted-foreground">Based on 413 Google reviews</p></div></div></div><div className="grid gap-4 sm:grid-cols-2">{[{name:'Mohini Mhaske',quote:'In two years I experienced that I increased my knowledge only because of Toppers Academy and their brilliant team. All teachers are well educated.'},{name:'Vini Datir',quote:'The academy is very good. Teaching faculty is very helpful and teaching is excellent. Overall experience is very good.'}].map((review)=><blockquote key={review.name} className="rounded-md border border-border bg-card p-7"><Quote className="size-8 text-brand-gold" /><p className="mt-6 text-base leading-7 text-foreground">"{review.quote}"</p><footer className="mt-6 flex items-center justify-between border-t border-border pt-5"><strong className="text-sm">{review.name}</strong><div className="flex text-brand-gold">{[1,2,3,4,5].map((item)=><Star key={item} className="size-3.5 fill-current" />)}</div></footer></blockquote>)}</div></div></div>
       </section>
 
-      <section id="enquire" className="relative overflow-hidden bg-brand-soft py-24 sm:py-32">
+      <section id="founder" className="border-t border-border py-24 sm:py-32">
+        <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:px-8">
+          <img loading="lazy" decoding="async" width={800} height={1000} src={facultyAsset.url} alt="Prof. Ganesh Kalaskar with students in the academy guidance room" className="aspect-[4/5] w-full object-cover grayscale" />
+          <div>
+            <SectionHeading eyebrow="About the founder" title="Prof. Ganesh Kalaskar" copy="Founder and Director, Kalaskar Toppers Academy, Kashti." />
+            <p className="mt-6 max-w-2xl leading-8 text-muted-foreground">Prof. Kalaskar founded the academy to give students from Kashti, Shrigonda and the wider Ahilyanagar district access to serious JEE, NEET and MHT-CET preparation without leaving the region. He leads the academic team, designs the test programme and personally reviews student progress with families.</p>
+            <p className="mt-4 max-w-2xl leading-8 text-muted-foreground">Today the academy supports a community of 600 to 800+ students across classroom, hostel and transport programmes.</p>
+            <p className="mt-6 text-xs uppercase tracking-[0.16em] text-muted-foreground">Bio draft for client review</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="bg-brand-soft py-24 sm:py-32">
+        <div className="mx-auto max-w-4xl px-5 lg:px-8">
+          <SectionHeading eyebrow="Questions from parents" title="Frequently asked questions" />
+          <div className="mt-10 divide-y divide-border border-y border-border">
+            {faqs.map((item) => (
+              <details key={item.q} className="group py-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-display text-xl">{item.q}<ChevronDown className="size-5 shrink-0 text-primary transition group-open:rotate-180" /></summary>
+                <p className="mt-4 leading-7 text-muted-foreground">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="enquire" className="relative overflow-hidden py-24 sm:py-32">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:px-8">
-          <div><SectionHeading eyebrow="Admissions 2026–27" title="Your next result starts with one conversation." copy="Meet the academic team, understand the right pathway and experience the academy before making a decision." /><div className="mt-8 grid gap-4 sm:grid-cols-2"><a href={`tel:+91${PHONE}`} className="flex items-center gap-4 rounded-md border border-border bg-card p-5 transition hover:border-primary/40"><span className="grid size-11 place-items-center rounded-full bg-primary text-primary-foreground"><Phone className="size-4" /></span><span><small className="block text-muted-foreground">Call admissions</small><strong>+91 {PHONE}</strong></span></a><a href={WHATSAPP} target="_blank" rel="noreferrer" className="flex items-center gap-4 rounded-md border border-border bg-card p-5 transition hover:border-primary/40"><span className="grid size-11 place-items-center rounded-full bg-success text-success-foreground"><MessageCircle className="size-4" /></span><span><small className="block text-muted-foreground">Chat on WhatsApp</small><strong>Quick response</strong></span></a></div><p className="mt-7 flex items-start gap-3 text-sm leading-6 text-muted-foreground"><MapPin className="mt-1 size-4 shrink-0 text-primary" /> Shrigonda Road Chowk, next to Sagar Traders, Kashti, Maharashtra 414701</p></div>
+          <div><SectionHeading eyebrow="Admissions 2026-27" title="Your next result starts with one conversation." copy="Meet the academic team, understand the right pathway and experience the academy before making a decision." /><div className="mt-8 grid gap-4 sm:grid-cols-2"><a href={`tel:+91${PHONE}`} className="flex items-center gap-4 rounded-md border border-border bg-card p-5 transition hover:border-primary/40"><span className="grid size-11 place-items-center rounded-full bg-primary text-primary-foreground"><Phone className="size-4" /></span><span><small className="block text-muted-foreground">Call admissions</small><strong>+91 {PHONE}</strong></span></a><a href={WHATSAPP} target="_blank" rel="noreferrer" className="flex items-center gap-4 rounded-md border border-border bg-card p-5 transition hover:border-primary/40"><span className="grid size-11 place-items-center rounded-full bg-success text-success-foreground"><MessageCircle className="size-4" /></span><span><small className="block text-muted-foreground">Chat on WhatsApp</small><strong>Quick response</strong></span></a></div><p className="mt-7 flex items-start gap-3 text-sm leading-6 text-muted-foreground"><MapPin className="mt-1 size-4 shrink-0 text-primary" /> Shrigonda Road Chowk, next to Sagar Traders, Kashti, Maharashtra 414701</p></div>
           <form className="rounded-md border border-border bg-card p-6 shadow-premium sm:p-8" onSubmit={(e)=>e.preventDefault()}><p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Request a counselling call</p><h3 className="mt-3 font-display text-2xl font-semibold">Tell us where you are in the journey.</h3><div className="mt-7 grid gap-4 sm:grid-cols-2"><Input aria-label="Student name" placeholder="Student name" className="h-12" /><Input aria-label="Phone number" placeholder="Phone number" className="h-12" /><Select defaultValue="JEE"><SelectTrigger className="h-12"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="JEE">JEE preparation</SelectItem><SelectItem value="NEET">NEET preparation</SelectItem><SelectItem value="Foundation">Foundation</SelectItem></SelectContent></Select><Select defaultValue="Class 11"><SelectTrigger className="h-12"><SelectValue /></SelectTrigger><SelectContent><SelectItem value="Class 10">Class 10</SelectItem><SelectItem value="Class 11">Class 11</SelectItem><SelectItem value="Class 12">Class 12</SelectItem><SelectItem value="Repeater">Repeater</SelectItem></SelectContent></Select></div><Button type="button" className="mt-5 h-12 w-full" asChild><a href={WHATSAPP} target="_blank" rel="noreferrer">Continue on WhatsApp <ArrowRight /></a></Button><p className="mt-4 text-center text-xs text-muted-foreground">Demo enquiry flow · No details are stored</p></form>
         </div>
       </section>
@@ -364,10 +431,10 @@ export function AcademySite() {
 
       <Dialog open={mockOpen} onOpenChange={(open)=>{setMockOpen(open); if(!open) resetMock();}}><DialogContent className="max-w-2xl overflow-hidden p-0"><div className="bg-brand-deep p-6 text-primary-foreground sm:p-8"><DialogHeader><p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-gold">15-minute diagnostic · Demo</p><DialogTitle className="mt-2 font-display text-3xl">JEE / NEET readiness check</DialogTitle><DialogDescription className="text-primary-foreground/60">Answer three representative questions for instant analysis.</DialogDescription></DialogHeader></div><div className="p-6 sm:p-8">{!mockDone ? <><div className="flex items-center justify-between text-xs font-bold uppercase tracking-[0.12em] text-muted-foreground"><span>{currentQuestion.subject}</span><span>Question {mockStep+1} of {questions.length}</span></div><Progress value={((mockStep+1)/questions.length)*100} className="mt-4" /><h3 className="mt-7 text-lg font-semibold leading-7">{currentQuestion.question}</h3><div className="mt-6 grid gap-3">{currentQuestion.options.map((option,index)=><Button key={option} variant="outline" onClick={()=>chooseAnswer(index)} className="h-auto justify-start whitespace-normal p-4 text-left"><span className="grid size-7 shrink-0 place-items-center rounded-full bg-muted text-xs">{String.fromCharCode(65+index)}</span>{option}</Button>)}</div></> : <div className="text-center"><div className="mx-auto grid size-20 place-items-center rounded-full bg-brand-gold text-brand-deep"><Trophy className="size-8" /></div><p className="mt-6 text-xs font-bold uppercase tracking-[0.18em] text-primary">Instant analysis</p><h3 className="mt-2 font-display text-4xl font-semibold">{mockScore}/{questions.length} correct</h3><p className="mx-auto mt-3 max-w-md leading-7 text-muted-foreground">{mockScore === 3 ? 'Excellent fundamentals. You are ready for advanced problem-solving.' : mockScore >= 2 ? 'Good base. Focused practice can quickly close your remaining gaps.' : 'A structured concept plan will give you the strongest start.'}</p><div className="mt-7 grid grid-cols-3 gap-2">{questions.map((question,index)=><div key={question.subject} className="rounded-md bg-brand-soft p-3"><span className="block text-xs text-muted-foreground">{question.subject}</span><strong className={`mt-1 block text-sm ${answers[index]===question.answer?'text-success':'text-destructive'}`}>{answers[index]===question.answer?'Strong':'Needs focus'}</strong></div>)}</div><Button className="mt-7 w-full" asChild><a href="#enquire" onClick={()=>setMockOpen(false)}>Book detailed counselling <ArrowRight /></a></Button></div>}</div></DialogContent></Dialog>
 
-      <Dialog open={portalOpen} onOpenChange={setPortalOpen}><DialogContent><DialogHeader><p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Parent–student portal</p><DialogTitle className="font-display text-3xl">Accountability, in your pocket.</DialogTitle><DialogDescription>This interactive preview shows the proposed secure experience for enrolled families.</DialogDescription></DialogHeader><div className="mt-4 rounded-md bg-brand-soft p-5"><div className="flex items-center gap-4"><div className="grid size-12 place-items-center rounded-full bg-primary text-primary-foreground"><GraduationCap /></div><div><strong className="block">Demo Student</strong><span className="text-sm text-muted-foreground">JEE · Batch A</span></div></div><div className="mt-5 grid grid-cols-2 gap-3"><div className="rounded-md bg-card p-4"><span className="text-xs text-muted-foreground">Attendance</span><strong className="mt-1 block text-2xl">94%</strong></div><div className="rounded-md bg-card p-4"><span className="text-xs text-muted-foreground">Test rank</span><strong className="mt-1 block text-2xl">12 / 186</strong></div></div></div><Button asChild className="mt-3"><a href="#enquire" onClick={()=>setPortalOpen(false)}>Ask about admissions <ArrowRight /></a></Button></DialogContent></Dialog>
+      <Dialog open={portalOpen} onOpenChange={setPortalOpen}><DialogContent><DialogHeader><p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">Parent-student portal</p><DialogTitle className="font-display text-3xl">Accountability, in your pocket.</DialogTitle><DialogDescription>This interactive preview shows the proposed secure experience for enrolled families.</DialogDescription></DialogHeader><div className="mt-4 rounded-md bg-brand-soft p-5"><div className="flex items-center gap-4"><div className="grid size-12 place-items-center rounded-full bg-primary text-primary-foreground"><GraduationCap /></div><div><strong className="block">Demo Student</strong><span className="text-sm text-muted-foreground">JEE · Batch A</span></div></div><div className="mt-5 grid grid-cols-2 gap-3"><div className="rounded-md bg-card p-4"><span className="text-xs text-muted-foreground">Attendance</span><strong className="mt-1 block text-2xl">94%</strong></div><div className="rounded-md bg-card p-4"><span className="text-xs text-muted-foreground">Test rank</span><strong className="mt-1 block text-2xl">12 / 186</strong></div></div></div><Button asChild className="mt-3"><a href="#enquire" onClick={()=>setPortalOpen(false)}>Ask about admissions <ArrowRight /></a></Button></DialogContent></Dialog>
 
       <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-3">
-        {chatOpen && <div className="w-[min(360px,calc(100vw-40px))] rounded-md border border-border bg-card shadow-premium"><div className="flex items-center justify-between bg-brand-deep p-4 text-primary-foreground"><div className="flex items-center gap-3"><span className="grid size-9 place-items-center rounded-full bg-brand-gold text-brand-deep"><Bot className="size-4" /></span><div><strong className="block text-sm">Toppers Guide</strong><span className="block text-xs text-primary-foreground/55">Admissions assistant · Demo</span></div></div><Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" onClick={()=>setChatOpen(false)}><X /></Button></div><div className="p-4"><p className="rounded-md bg-brand-soft p-3 text-sm leading-6">{chatAnswer}</p><div className="mt-3 grid gap-2">{quickAnswers.map((item)=><Button key={item.question} variant="outline" className="h-auto justify-start whitespace-normal p-3 text-left text-xs" onClick={()=>setChatAnswer(item.answer)}>{item.question}</Button>)}</div><Button asChild className="mt-3 w-full bg-success text-success-foreground hover:bg-success/90"><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle /> Continue on WhatsApp</a></Button></div></div>}
+        {chatOpen && <div className="w-[min(360px,calc(100vw-40px))] rounded-md border border-border bg-card shadow-premium"><div className="flex items-center justify-between bg-brand-deep p-4 text-primary-foreground"><div className="flex items-center gap-3"><span className="grid size-9 place-items-center rounded-full bg-brand-gold text-brand-deep"><Headphones className="size-4" /></span><div><strong className="block text-sm">Toppers Guide</strong><span className="block text-xs text-primary-foreground/55">Admissions assistant · Demo</span></div></div><Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" onClick={()=>setChatOpen(false)}><X /></Button></div><div className="p-4"><p className="rounded-md bg-brand-soft p-3 text-sm leading-6">{chatAnswer}</p><div className="mt-3 grid gap-2">{quickAnswers.map((item)=><Button key={item.question} variant="outline" className="h-auto justify-start whitespace-normal p-3 text-left text-xs" onClick={()=>setChatAnswer(item.answer)}>{item.question}</Button>)}</div><Button asChild className="mt-3 w-full bg-success text-success-foreground hover:bg-success/90"><a href={WHATSAPP} target="_blank" rel="noreferrer"><MessageCircle /> Continue on WhatsApp</a></Button></div></div>}
         <Button size="icon" className="size-14 rounded-full bg-primary shadow-cta" onClick={()=>setChatOpen(!chatOpen)} aria-label="Open admissions assistant">{chatOpen ? <ChevronDown /> : <MessageCircle className="size-6" />}</Button>
       </div>
     </main>
